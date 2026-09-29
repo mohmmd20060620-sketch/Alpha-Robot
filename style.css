@@ -390,3 +390,19 @@ footer {
 .fb-btn:hover { background: #1877f2 !important; }
 .telegram-btn:hover { background: #229ed9 !important; }
 .wa-btn:hover { background: #25d366 !important; }
+
+/* ألوان مخصصة لزر الاتصال والواتساب المباشر */
+.call-btn:hover { background: #0284c7 !important; }
+.wa-direct-btn:hover { background: #25d366 !important; }
+
+/* ترتيب وتنسيق الأيقونات داخل الأزرار */
+.social-btn i {
+    margin-left: 10px; /* مسافة بين الأيقونة والنص */
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.company-heading i, .company-tagline i, .social-divider i {
+    margin-left: 6px;
+    color: var(--primary-cyan);
+}
