@@ -1,4 +1,4 @@
-/* Alpha Robot - Dark Futuristic Theme */
+/* Alpha Robot - Dark Futuristic Responsive Theme */
 :root {
     --bg-dark: #0a0f1d;
     --card-bg: #111827;
@@ -52,7 +52,7 @@ body::after {
 
 /* Header & Navigation */
 header {
-    background: rgba(10, 15, 29, 0.85);
+    background: rgba(10, 15, 29, 0.95);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     position: fixed;
@@ -69,6 +69,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 1.2rem 2rem;
+    position: relative;
 }
 
 .logo {
@@ -107,22 +108,27 @@ header {
     text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
 }
 
+/* زر القائمة المخصص للجوال */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 1.4rem;
+    color: var(--primary-cyan);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-toggle:hover {
+    background: rgba(0, 242, 254, 0.1);
+}
+
 /* Hero Section */
 .hero {
     padding: 180px 2rem 100px;
     text-align: center;
-}
-
-.badge {
-    display: inline-block;
-    padding: 6px 16px;
-    background: rgba(0, 242, 254, 0.1);
-    color: var(--primary-cyan);
-    border: 1px solid var(--border-color);
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
 }
 
 .hero h1 {
@@ -142,12 +148,6 @@ header {
     margin: 0 auto 2.5rem;
 }
 
-.btn-group {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-}
-
 .btn {
     padding: 0.9rem 2.2rem;
     border-radius: 50px;
@@ -157,78 +157,39 @@ header {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-}
-
-.btn-primary {
     background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
     color: #030712;
     box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+    border: none;
+    cursor: pointer;
 }
 
-.btn-primary:hover {
+.btn:hover {
     transform: translateY(-3px);
     box-shadow: 0 0 30px rgba(0, 242, 254, 0.6);
 }
 
-.btn-secondary {
-    background: rgba(255, 255, 255, 0.05);
-    color: var(--text-primary);
-    border: 1px solid var(--border-color);
-}
-
-.btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: var(--primary-cyan);
-}
-
-/* Stats Section */
-.stats {
-    display: flex;
-    justify-content: space-around;
-    max-width: 1000px;
-    margin: 0 auto 80px;
-    padding: 2rem;
-    background: var(--card-bg);
-    border-radius: 20px;
-    border: 1px solid var(--border-color);
-    box-shadow: var(--shadow-card);
-}
-
-.stat-item h3 {
-    font-size: 2.2rem;
-    font-weight: 800;
-    color: var(--primary-cyan);
-}
-
-.stat-item p {
-    color: var(--text-secondary);
-}
-
-/* Container & Cards (تعديل لون الكروت للداكن) */
+/* Container & Cards */
 .container {
     max-width: 1280px;
     margin: 0 auto;
     padding: 0 2rem 100px;
 }
 
-.section-header {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
 .section-title {
     font-size: 2.5rem;
     font-weight: 800;
     color: var(--text-primary);
+    text-align: center;
+    margin-bottom: 2rem;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
-/* الكروت الداكنة الجديدة */
 .card {
     background: var(--card-bg) !important;
     border: 1px solid var(--border-color) !important;
@@ -245,18 +206,6 @@ header {
     box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
 }
 
-.card-icon {
-    width: 60px;
-    height: 60px;
-    background: rgba(0, 242, 254, 0.1);
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-}
-
 .card h3 {
     font-size: 1.4rem;
     font-weight: 700;
@@ -268,7 +217,7 @@ header {
     color: var(--text-secondary);
 }
 
-/* Forms (تعديل نموذج التواصل للداكن) */
+/* Forms */
 .contact-form {
     max-width: 650px;
     margin: 0 auto;
@@ -306,116 +255,9 @@ header {
     box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
 }
 
-/* Footer */
-footer {
-    background: #050811;
-    text-align: center;
-    padding: 3rem 2rem;
-    border-top: 1px solid var(--border-color);
-    color: var(--text-secondary);
-}
-
-/* ==============================================
-   تنسيقات خاصة ببطاقة (من نحن) وروافد التواصل
-   ============================================== */
-
-.about-card {
-    max-width: 850px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.company-heading {
-    font-size: 1.6rem;
-    color: var(--primary-cyan) !important;
-    margin-bottom: 1rem;
-}
-
-.company-tagline {
-    font-size: 1.1rem;
-    color: var(--text-light);
-    font-weight: 600;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    background: rgba(0, 242, 254, 0.05);
-    padding: 1rem;
-    border-radius: 12px;
-    border: 1px dashed var(--border-color);
-}
-
-.company-description {
-    font-size: 1.05rem;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-}
-
-.social-divider {
-    margin: 2rem 0 1.5rem;
-    font-weight: 700;
-    color: var(--primary-cyan);
-    border-top: 1px solid var(--border-color);
-    padding-top: 1.5rem;
-}
-
-.social-links-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.social-btn {
-    display: block;
-    width: 100%;
-    padding: 0.9rem 1.2rem;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 1rem;
-    color: #ffffff !important;
-    background: #1e293b;
-    border: 1px solid var(--border-color);
-    transition: all 0.3s ease;
-    text-align: center;
-}
-
-.social-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 242, 254, 0.25);
-    border-color: var(--primary-cyan);
-}
-
-/* ألوان مخصصة لكل منصة عند التمرير بالماوس */
-.email-btn:hover { background: #ea4335 !important; }
-.insta-btn:hover, .insta-channel-btn:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; }
-.fb-btn:hover { background: #1877f2 !important; }
-.telegram-btn:hover { background: #229ed9 !important; }
-.wa-btn:hover { background: #25d366 !important; }
-
-/* ألوان مخصصة لزر الاتصال والواتساب المباشر */
-.call-btn:hover { background: #0284c7 !important; }
-.wa-direct-btn:hover { background: #25d366 !important; }
-
-/* ترتيب وتنسيق الأيقونات داخل الأزرار */
-.social-btn i {
-    margin-left: 10px; /* مسافة بين الأيقونة والنص */
-    font-size: 1.2rem;
-    vertical-align: middle;
-}
-
-.company-heading i, .company-tagline i, .social-divider i {
-    margin-left: 6px;
-    color: var(--primary-cyan);
-}
-
-
-
-
-/* ==============================================
-   التجاوب مع اللابتوب والشاشات المختلفة والجوالات
-   ============================================== */
-
+/* About Card & Links */
 .about-container {
-    margin-top: 120px;
+    margin-top: 130px;
 }
 
 .about-card {
@@ -433,7 +275,7 @@ footer {
 
 .company-tagline {
     font-size: 1.1rem;
-    color: var(--text-light);
+    color: var(--text-primary);
     font-weight: 600;
     line-height: 1.8;
     margin-bottom: 1.5rem;
@@ -447,6 +289,7 @@ footer {
     font-size: 1.05rem;
     line-height: 1.8;
     margin-bottom: 2rem;
+    color: var(--text-secondary);
 }
 
 .social-divider {
@@ -457,7 +300,6 @@ footer {
     padding-top: 1.5rem;
 }
 
-/* التنسيق الافتراضي للابتوب والشاشات الكبيرة (عمودين من الأزرار) */
 .social-links-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -490,7 +332,6 @@ footer {
     border-color: var(--primary-cyan);
 }
 
-/* ألوان الأزرار عند التحويم */
 .call-btn:hover { background: #0284c7 !important; }
 .wa-direct-btn:hover, .wa-btn:hover { background: #25d366 !important; }
 .email-btn:hover { background: #ea4335 !important; }
@@ -498,13 +339,63 @@ footer {
 .fb-btn:hover { background: #1877f2 !important; }
 .telegram-btn:hover { background: #229ed9 !important; }
 
+/* Footer */
+footer {
+    background: #050811;
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
 /* ==============================================
-   تعديلات خاصة بشاشات الهواتف المحمولة (الجوال)
+   تنسيقات التجاوب مع شاشات الجوال (Mobile Devices)
    ============================================== */
 @media (max-width: 768px) {
+    .nav-container {
+        padding: 1rem 1.2rem;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        background: #0d1527;
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.2rem;
+        border-bottom: 1px solid var(--border-color);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hero {
+        padding: 130px 1rem 60px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 0 1rem 60px;
+    }
+
     .about-container {
-        margin-top: 90px;
-        padding: 0 1rem 50px;
+        margin-top: 100px;
     }
 
     .about-card {
@@ -515,22 +406,16 @@ footer {
         font-size: 1.25rem;
     }
 
-    .company-tagline {
+    .company-tagline, .company-description {
         font-size: 0.95rem;
     }
 
-    .company-description {
-        font-size: 0.95rem;
-    }
-
-    /* تحويل الأزرار لشاشة الجوال لعمود واحد لسهولة النقر */
     .social-links-grid {
         grid-template-columns: 1fr;
         gap: 12px;
     }
 
-    .social-btn {
-        font-size: 0.9rem;
-        padding: 0.85rem 1rem;
+    .contact-form {
+        padding: 1.5rem 1rem;
     }
 }

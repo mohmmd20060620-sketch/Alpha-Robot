@@ -1,15 +1,13 @@
-// Alpha Robot - Interactivity Script
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Highlight Active Nav Link
-    const currentLocation = location.pathname.split('/').pop();
-    const menuItems = document.querySelectorAll('.nav-links a');
-    
-    menuItems.forEach(item => {
-        if(item.getAttribute('href') === currentLocation) {
-            item.classList.add('active');
-        }
-    });
+    // 1. Toggle Mobile Navigation Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('show');
+        });
+    }
 
     // 2. Handle Contact Form Submission
     const form = document.getElementById('contactForm');
