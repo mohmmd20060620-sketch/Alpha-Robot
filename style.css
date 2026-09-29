@@ -1,0 +1,392 @@
+/* Alpha Robot - Dark Futuristic Theme */
+:root {
+    --bg-dark: #0a0f1d;
+    --card-bg: #111827;
+    --card-hover-bg: #1e293b;
+    --primary-blue: #0284c7;
+    --primary-cyan: #00f2fe;
+    --accent-purple: #7f00ff;
+    --text-primary: #f8fafc;
+    --text-secondary: #94a3b8;
+    --border-color: rgba(0, 242, 254, 0.2);
+    --border-glow: rgba(0, 242, 254, 0.5);
+    --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    direction: rtl;
+}
+
+body {
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* Background Ambient Glow */
+body::before, body::after {
+    content: '';
+    position: fixed;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(140px);
+    z-index: -1;
+    opacity: 0.25;
+}
+body::before {
+    top: -100px;
+    right: -100px;
+    background: var(--primary-cyan);
+}
+body::after {
+    bottom: -100px;
+    left: -100px;
+    background: var(--accent-purple);
+}
+
+/* Header & Navigation */
+header {
+    background: rgba(10, 15, 29, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 2rem;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 800;
+    font-size: 1.5rem;
+}
+
+.logo img {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 2px solid var(--primary-cyan);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary-cyan);
+    text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
+
+/* Hero Section */
+.hero {
+    padding: 180px 2rem 100px;
+    text-align: center;
+}
+
+.badge {
+    display: inline-block;
+    padding: 6px 16px;
+    background: rgba(0, 242, 254, 0.1);
+    color: var(--primary-cyan);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, #ffffff 40%, var(--primary-cyan), var(--accent-purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.btn {
+    padding: 0.9rem 2.2rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-cyan), var(--primary-blue));
+    color: #030712;
+    box-shadow: 0 0 20px rgba(0, 242, 254, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(0, 242, 254, 0.6);
+}
+
+.btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: var(--primary-cyan);
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto 80px;
+    padding: 2rem;
+    background: var(--card-bg);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-card);
+}
+
+.stat-item h3 {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--primary-cyan);
+}
+
+.stat-item p {
+    color: var(--text-secondary);
+}
+
+/* Container & Cards (تعديل لون الكروت للداكن) */
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem 100px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-primary);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+/* الكروت الداكنة الجديدة */
+.card {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    padding: 2.5rem;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-card);
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    background: var(--card-hover-bg) !important;
+    border-color: var(--primary-cyan) !important;
+    box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 242, 254, 0.1);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-cyan);
+}
+
+.card p {
+    color: var(--text-secondary);
+}
+
+/* Forms (تعديل نموذج التواصل للداكن) */
+.contact-form {
+    max-width: 650px;
+    margin: 0 auto;
+    background: var(--card-bg) !important;
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--shadow-card);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    background: #070b15 !important;
+    color: #ffffff !important;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: var(--primary-cyan);
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.3);
+}
+
+/* Footer */
+footer {
+    background: #050811;
+    text-align: center;
+    padding: 3rem 2rem;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+/* ==============================================
+   تنسيقات خاصة ببطاقة (من نحن) وروافد التواصل
+   ============================================== */
+
+.about-card {
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.company-heading {
+    font-size: 1.6rem;
+    color: var(--primary-cyan) !important;
+    margin-bottom: 1rem;
+}
+
+.company-tagline {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-weight: 600;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 242, 254, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px dashed var(--border-color);
+}
+
+.company-description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.social-divider {
+    margin: 2rem 0 1.5rem;
+    font-weight: 700;
+    color: var(--primary-cyan);
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+.social-links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.social-btn {
+    display: block;
+    width: 100%;
+    padding: 0.9rem 1.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    color: #ffffff !important;
+    background: #1e293b;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 242, 254, 0.25);
+    border-color: var(--primary-cyan);
+}
+
+/* ألوان مخصصة لكل منصة عند التمرير بالماوس */
+.email-btn:hover { background: #ea4335 !important; }
+.insta-btn:hover, .insta-channel-btn:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; }
+.fb-btn:hover { background: #1877f2 !important; }
+.telegram-btn:hover { background: #229ed9 !important; }
+.wa-btn:hover { background: #25d366 !important; }
