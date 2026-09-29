@@ -406,3 +406,131 @@ footer {
     margin-left: 6px;
     color: var(--primary-cyan);
 }
+
+
+
+
+/* ==============================================
+   التجاوب مع اللابتوب والشاشات المختلفة والجوالات
+   ============================================== */
+
+.about-container {
+    margin-top: 120px;
+}
+
+.about-card {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2.5rem;
+}
+
+.company-heading {
+    font-size: 1.6rem;
+    color: var(--primary-cyan) !important;
+    margin-bottom: 1rem;
+}
+
+.company-tagline {
+    font-size: 1.1rem;
+    color: var(--text-light);
+    font-weight: 600;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    background: rgba(0, 242, 254, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+    border: 1px dashed var(--border-color);
+}
+
+.company-description {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.social-divider {
+    margin: 2rem 0 1.5rem;
+    font-weight: 700;
+    color: var(--primary-cyan);
+    border-top: 1px solid var(--border-color);
+    padding-top: 1.5rem;
+}
+
+/* التنسيق الافتراضي للابتوب والشاشات الكبيرة (عمودين من الأزرار) */
+.social-links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9rem 1.2rem;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    color: #ffffff !important;
+    background: #1e293b;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.social-btn i {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 242, 254, 0.25);
+    border-color: var(--primary-cyan);
+}
+
+/* ألوان الأزرار عند التحويم */
+.call-btn:hover { background: #0284c7 !important; }
+.wa-direct-btn:hover, .wa-btn:hover { background: #25d366 !important; }
+.email-btn:hover { background: #ea4335 !important; }
+.insta-btn:hover, .insta-channel-btn:hover { background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888) !important; }
+.fb-btn:hover { background: #1877f2 !important; }
+.telegram-btn:hover { background: #229ed9 !important; }
+
+/* ==============================================
+   تعديلات خاصة بشاشات الهواتف المحمولة (الجوال)
+   ============================================== */
+@media (max-width: 768px) {
+    .about-container {
+        margin-top: 90px;
+        padding: 0 1rem 50px;
+    }
+
+    .about-card {
+        padding: 1.5rem 1rem;
+    }
+
+    .company-heading {
+        font-size: 1.25rem;
+    }
+
+    .company-tagline {
+        font-size: 0.95rem;
+    }
+
+    .company-description {
+        font-size: 0.95rem;
+    }
+
+    /* تحويل الأزرار لشاشة الجوال لعمود واحد لسهولة النقر */
+    .social-links-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .social-btn {
+        font-size: 0.9rem;
+        padding: 0.85rem 1rem;
+    }
+}
